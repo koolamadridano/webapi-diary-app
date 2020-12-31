@@ -187,8 +187,10 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DiaryController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
+    <Compile Include="Controllers\SongController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,9 +210,11 @@
     <Compile Include="Helpers\UserAccount.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Diary.cs" />
+    <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\SDWebApiDbContext.cs" />
+    <Compile Include="Models\Song.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

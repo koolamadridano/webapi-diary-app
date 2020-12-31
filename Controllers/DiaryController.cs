@@ -37,7 +37,6 @@ namespace SharpDevelopWebApi.Controllers
             diaries = _db.Diaries.ToList();
             return Ok(diaries);
         }
-        
        	[HttpGet]
     	[Route("api/diary/find/{Id}")]		
         public IHttpActionResult Get(int Id)
@@ -48,7 +47,16 @@ namespace SharpDevelopWebApi.Controllers
             else
                 return BadRequest("diary Id is invalid or not found");
         }
-        
+        [HttpGet]
+    	[Route("api/diary/findBySpecialId/{Id}")]		
+        public IHttpActionResult GetBySpecialId(int Id)
+        {       
+        	var diary = _db.Diaries.Where(x => x.specialId == Id);
+            if (diary != null)
+                return Ok(diary);
+            else
+                return BadRequest("Special Id is invalid or not found");
+        }
         [HttpDelete]
         [Route("api/diary/remove/{Id}")]		
         public IHttpActionResult Delete(int Id)

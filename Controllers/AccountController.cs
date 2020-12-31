@@ -35,9 +35,7 @@ namespace SharpDevelopWebApi.Controllers
             var userId = UserAccount.Create(newUser.UserName, newUser.Password, newUser.Role);
             if (userId != null)
             {
-    
             	// Feel free to remove the ABOVE code if not needed.
-                
             	return Ok(new { UserId = userId, Message = "Account successfully created" });
             }
             else

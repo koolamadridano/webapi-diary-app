@@ -46,7 +46,16 @@ namespace SharpDevelopWebApi.Controllers
             else
                 return BadRequest("Profile is invalid or not found");
         }
-        
+		[HttpGet]
+    	[Route("api/profile/findBySpecialId/{Id}")]		
+        public IHttpActionResult GetBySpecialId(int Id)
+        {       
+        	var profile = _db.Profiles.Where(x => x.specialId == Id).Take(1);
+            if (profile != null)
+                return Ok(profile);
+            else
+                return BadRequest("Special Id is invalid or not found");
+        }
         [HttpPut]
         [Route("api/profile/update")]		
         public IHttpActionResult Update(Profile profileEdit)
@@ -56,11 +65,14 @@ namespace SharpDevelopWebApi.Controllers
             {	
             	profile.FirstName = profileEdit.FirstName;
             	profile.LastName = profileEdit.LastName;
+            	profile.Gender = profileEdit.Gender;
+            	profile.Media = profileEdit.Media;
+            	profile.BirthDate = profileEdit.BirthDate;
+            	profile.Address = profileEdit.Address;
             	profile.ShortDescription = profileEdit.ShortDescription;
             	
                 _db.Entry(profile).State = System.Data.Entity.EntityState.Modified;
                 _db.SaveChanges();
-
                 return Ok(profile);
             }
             else

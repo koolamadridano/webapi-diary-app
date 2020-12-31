@@ -1,11 +1,13 @@
+using System;
+using System.Collections.Generic;
 using System.Web.Http;
-using WebActivatorEx;
+
+using System.Web.Http.Description;
+
 using SharpDevelopWebApi;
 using Swashbuckle.Application;
-using System;
 using Swashbuckle.Swagger;
-using System.Web.Http.Description;
-using System.Collections.Generic;
+using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -16,6 +18,7 @@ namespace SharpDevelopWebApi
         public static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
+
 
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>

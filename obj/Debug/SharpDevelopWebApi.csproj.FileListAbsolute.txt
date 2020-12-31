@@ -264,3 +264,4 @@ D:\Development\Client\webapi-diary-app\bin\System.Web.WebPages.Deployment.xml
 D:\Development\Client\webapi-diary-app\bin\System.Web.WebPages.Razor.xml
 D:\Development\Client\webapi-diary-app\obj\Debug\SharpDevelopWebApi.dll
 D:\Development\Client\webapi-diary-app\obj\Debug\SharpDevelopWebApi.pdb
+D:\Development\Client\webapi-diary-app\obj\Debug\SharpDevelopWebApi.csprojResolveAssemblyReference.cache
